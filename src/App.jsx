@@ -6,22 +6,33 @@ import gallery3 from './assets/gallery3.jpg'
 
 export default function App() {
   return (
-    <div className="bg-[#f6f3ee] text-gray-800">
+    <div className="bg-[#f7f5f1] text-gray-800 overflow-hidden">
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-md text-white">
 
-        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-          <h1 className="text-2xl font-bold tracking-wide">
+          <h1 className="text-xl md:text-2xl font-semibold tracking-wide">
             Taman Farm
           </h1>
 
           <div className="hidden md:flex gap-8 text-sm">
-            <a href="#tentang">Tentang</a>
-            <a href="#produk">Produk</a>
-            <a href="#galeri">Galeri</a>
-            <a href="#kontak">Kontak</a>
+            <a href="#tentang" className="hover:text-green-300 transition">
+              Tentang
+            </a>
+
+            <a href="#produk" className="hover:text-green-300 transition">
+              Produk
+            </a>
+
+            <a href="#galeri" className="hover:text-green-300 transition">
+              Galeri
+            </a>
+
+            <a href="#kontak" className="hover:text-green-300 transition">
+              Kontak
+            </a>
           </div>
 
         </div>
@@ -36,27 +47,28 @@ export default function App() {
         }}
       >
 
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/55"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
 
-          <p className="uppercase tracking-[6px] text-sm mb-5">
+          <p className="uppercase tracking-[5px] text-sm mb-5">
             Green Space & Cafe
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight max-w-4xl mb-8">
-            Taman Farm Tasik
+          <h1 className="text-4xl md:text-7xl font-bold leading-tight max-w-4xl mb-6">
+            Tempat Bersantai di Tengah Hijau Alam
           </h1>
 
-          <p className="text-lg md:text-2xl max-w-2xl leading-relaxed mb-10">
-            Menyatukan tanaman, makanan, dan suasana alam
-            dalam satu tempat yang nyaman dan estetik.
+          <p className="text-base md:text-xl max-w-2xl leading-relaxed text-gray-200 mb-8">
+            Taman Farm menghadirkan suasana nyaman
+            melalui kombinasi tanaman hias,
+            cafe, dan ruang santai bernuansa alam.
           </p>
 
           <a
             href="https://wa.me/6285187922448"
             target="_blank"
-            className="bg-green-600 hover:bg-green-700 transition px-8 py-4 rounded-full inline-block font-semibold"
+            className="bg-green-600 hover:bg-green-700 transition px-7 py-4 rounded-full inline-block font-medium"
           >
             Hubungi Kami
           </a>
@@ -68,39 +80,39 @@ export default function App() {
       {/* ABOUT */}
       <section
         id="tentang"
-        className="py-32 px-6"
+        className="py-24 px-6"
       >
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 
-          <div className="h-[600px] rounded-[40px] overflow-hidden shadow-2xl">
+          <div className="rounded-[30px] overflow-hidden shadow-xl h-[450px]">
 
             <img
               src={aboutImage}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-105 transition duration-700"
             />
 
           </div>
 
           <div>
 
-            <p className="text-green-700 font-semibold mb-4">
+            <p className="text-green-700 font-semibold mb-3">
               Tentang Kami
             </p>
 
-            <h2 className="text-5xl font-bold leading-tight mb-8">
-              Tempat Bersantai di Tengah Hijau Alam
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+              Ruang Nyaman untuk Bersantai dan Menikmati Alam
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Taman Farm menghadirkan pengalaman berbeda
-              melalui kombinasi toko tanaman hias dan kedai bernuansa alam.
+            <p className="text-gray-600 leading-relaxed text-lg mb-5">
+              Taman Farm adalah tempat yang memadukan
+              tanaman hias dan kedai bernuansa alam
+              dalam satu ruang yang nyaman dan estetik.
             </p>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Cocok untuk keluarga, komunitas tanaman,
-              maupun siapa saja yang ingin melepas penat
-              sambil menikmati suasana hijau yang nyaman.
+            <p className="text-gray-600 leading-relaxed text-lg">
+              Cocok untuk keluarga, komunitas,
+              maupun tempat healing dari hiruk pikuk kota.
             </p>
 
           </div>
@@ -112,54 +124,54 @@ export default function App() {
       {/* PRODUK */}
       <section
         id="produk"
-        className="py-32 px-6 bg-white"
+        className="py-24 px-6 bg-white"
       >
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
 
-            <p className="text-green-700 font-semibold mb-4">
+            <p className="text-green-700 font-semibold mb-3">
               Produk & Layanan
             </p>
 
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-3xl md:text-5xl font-bold">
               Yang Kami Hadirkan
             </h2>
 
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
 
-            <div className="bg-[#f6f3ee] p-10 rounded-[35px]">
+            <div className="bg-[#f7f5f1] rounded-[30px] p-8 shadow-sm hover:-translate-y-2 transition duration-500 hover:shadow-2xl">
 
-              <h3 className="text-3xl font-bold mb-5">
+              <h3 className="text-2xl font-bold mb-4">
                 Tanaman Hias
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-                Monstera, Aglaonema, Philodendron,
-                tanaman indoor maupun outdoor pilihan.
+                Berbagai pilihan tanaman indoor
+                dan outdoor yang estetik dan segar.
               </p>
 
             </div>
 
-            <div className="bg-[#f6f3ee] p-10 rounded-[35px]">
+            <div className="bg-[#f7f5f1] rounded-[30px] p-8 shadow-sm hover:-translate-y-2 transition duration-500 hover:shadow-2xl">
 
-              <h3 className="text-3xl font-bold mb-5">
+              <h3 className="text-2xl font-bold mb-4">
                 Kedai Makanan
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-                Menu rumahan dan minuman hangat
+                Menu makanan dan minuman hangat
                 dengan suasana semi outdoor yang nyaman.
               </p>
 
             </div>
 
-            <div className="bg-[#f6f3ee] p-10 rounded-[35px]">
+            <div className="bg-[#f7f5f1] rounded-[30px] p-8 shadow-sm hover:-translate-y-2 transition duration-500 hover:shadow-2xl">
 
-              <h3 className="text-3xl font-bold mb-5">
+              <h3 className="text-2xl font-bold mb-4">
                 Dekorasi Taman
               </h3>
 
@@ -179,18 +191,18 @@ export default function App() {
       {/* GALERI */}
       <section
         id="galeri"
-        className="py-32 px-6"
+        className="py-24 px-6"
       >
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
 
-            <p className="text-green-700 font-semibold mb-4">
+            <p className="text-green-700 font-semibold mb-3">
               Galeri
             </p>
 
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-3xl md:text-5xl font-bold">
               Suasana Taman Farm
             </h2>
 
@@ -198,21 +210,21 @@ export default function App() {
 
           <div className="grid md:grid-cols-3 gap-6">
 
-            <div className="h-[500px] rounded-[35px] overflow-hidden">
+            <div className="rounded-[30px] overflow-hidden h-[350px]">
               <img
                 src={gallery1}
                 className="w-full h-full object-cover hover:scale-110 transition duration-700"
               />
             </div>
 
-            <div className="h-[500px] rounded-[35px] overflow-hidden">
+            <div className="rounded-[30px] overflow-hidden h-[350px]">
               <img
                 src={gallery2}
                 className="w-full h-full object-cover hover:scale-110 transition duration-700"
               />
             </div>
 
-            <div className="h-[500px] rounded-[35px] overflow-hidden">
+            <div className="rounded-[30px] overflow-hidden h-[350px]">
               <img
                 src={gallery3}
                 className="w-full h-full object-cover hover:scale-110 transition duration-700"
@@ -225,41 +237,57 @@ export default function App() {
 
       </section>
 
-      {/* CTA */}
+      {/* KONTAK */}
       <section
         id="kontak"
-        className="py-32 px-6 bg-green-700 text-white text-center"
+        className="py-24 px-6 bg-green-700 text-white"
       >
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto text-center">
 
-          <p className="uppercase tracking-[6px] mb-5 text-sm">
+          <p className="uppercase tracking-[5px] text-sm mb-4">
             Contact Us
           </p>
 
-          <h2 className="text-5xl font-bold mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">
             Kunjungi Taman Farm
           </h2>
 
-          <p className="text-xl mb-4">
+          <p className="text-lg mb-3">
             Jl. Rancamaya, Karsamenak, Kawalu, Tasikmalaya
           </p>
 
-          <p className="text-xl mb-10">
+          <p className="text-lg mb-3">
             WhatsApp: 0851-8792-2448
           </p>
 
-          <a
-            href="https://maps.app.goo.gl/xhdLC7L7Xunfpay97"
-            target="_blank"
-            className="bg-white text-green-700 px-8 py-4 rounded-full inline-block font-semibold"
-          >
-            Buka Google Maps
-          </a>
+          <p className="text-lg mb-10">
+            Instagram: @tamanfarmtasik
+          </p>
+
+          <div className="rounded-[30px] overflow-hidden shadow-2xl">
+            <iframe
+              src="https://maps.google.com/maps?q=tasikmalaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
 
         </div>
 
       </section>
+
+      {/* FLOATING BUTTON */}
+      <a
+        href="https://wa.me/6285187922448"
+        target="_blank"
+        className="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 transition text-white px-5 py-4 rounded-full shadow-2xl z-50"
+      >
+        WhatsApp
+      </a>
 
     </div>
   )
