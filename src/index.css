@@ -1,10 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  /* Fresh Green Color Palette */
+  --color-primary: #16a34a;
+  --color-primary-dark: #15803d;
+  --color-primary-light: #22c55e;
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
+  
+  /* Neutral Palette */
+  --color-background: #fafdf7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0fdf4;
+  
+  /* Text Colors */
+  --color-foreground: #1a2e1a;
+  --color-muted: #4b5563;
+  --color-muted-light: #6b7280;
+  
+  /* Accent */
+  --color-accent: #eab308;
+  --color-accent-light: #fef08a;
+}
+
+* {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: 'Outfit', sans-serif;
-  background: #f6f3ee;
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary-200);
+  color: var(--color-primary-900);
 }
