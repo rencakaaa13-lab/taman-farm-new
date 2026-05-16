@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 import heroImage from "./assets/hero.jpg";
@@ -7,192 +6,350 @@ import gallery1 from "./assets/gallery1.jpg";
 import gallery2 from "./assets/gallery2.jpg";
 import gallery3 from "./assets/gallery3.jpg";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-};
-
 export default function App() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="bg-[#f6f3ee] text-gray-800 font-sans scroll-smooth">
+    <div className="bg-[#f6fdf7] text-gray-800 overflow-x-hidden">
+
+      {/* BACKGROUND BLUR */}
+      <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-300/30 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-200/30 blur-[120px] rounded-full"></div>
+      </div>
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-lg text-white shadow-md">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-green-100/20">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-          <h1 className="text-xl font-bold tracking-wide">Taman Farm</h1>
+          <h1 className="text-2xl font-extrabold bg-gradient-to-r from-green-700 to-emerald-500 bg-clip-text text-transparent">
+            🌿 Taman Farm
+          </h1>
 
-          {/* DESKTOP */}
-          <div className="hidden md:flex gap-6 text-sm">
-            <a href="#tentang">Tentang</a>
-            <a href="#produk">Produk</a>
-            <a href="#menu">Menu</a>
-            <a href="#galeri">Galeri</a>
-            <a href="#kontak">Kontak</a>
+          <div className="hidden md:flex gap-8 text-sm font-semibold text-gray-700">
+
+            <a href="#tentang" className="hover:text-green-600 transition">
+              Tentang
+            </a>
+
+            <a href="#menu" className="hover:text-green-600 transition">
+              Menu
+            </a>
+
+            <a href="#galeri" className="hover:text-green-600 transition">
+              Galeri
+            </a>
+
+            <a href="#lokasi" className="hover:text-green-600 transition">
+              Lokasi
+            </a>
+
+            <a href="#kontak" className="hover:text-green-600 transition">
+              Kontak
+            </a>
+
           </div>
 
-          {/* MOBILE BUTTON */}
-          <button className="md:hidden text-xl" onClick={() => setOpen(!open)}>
-            ☰
-          </button>
         </div>
-
-        {/* MOBILE MENU */}
-        {open && (
-          <div className="md:hidden bg-black/80 px-6 py-4 flex flex-col gap-3">
-            <a href="#tentang" onClick={() => setOpen(false)}>Tentang</a>
-            <a href="#produk" onClick={() => setOpen(false)}>Produk</a>
-            <a href="#menu" onClick={() => setOpen(false)}>Menu</a>
-            <a href="#galeri" onClick={() => setOpen(false)}>Galeri</a>
-            <a href="#kontak" onClick={() => setOpen(false)}>Kontak</a>
-          </div>
-        )}
       </nav>
 
       {/* HERO */}
-      <motion.section
+      <section
+        className="min-h-screen flex items-center justify-center text-center text-white px-6 relative pt-24"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,120,70,0.45)), url(${heroImage})`,
           backgroundSize: "cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
         }}
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp}
-        className="min-h-screen flex items-center justify-center text-center px-6 relative"
       >
-        <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-10 text-white max-w-3xl">
+        {/* overlay blur */}
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
 
-          <p className="tracking-[5px] text-xs md:text-sm mb-4">
-            GREEN CAFE & SPACE
-          </p>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 max-w-3xl bg-white/10 backdrop-blur-2xl border border-white/20 p-10 md:p-14 rounded-[40px] shadow-2xl"
+        >
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Tempat Santai di Tengah Alam
+          <div className="inline-block mb-6 px-5 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            🌿 Cafe • Tanaman • Healing Space
+          </div>
+
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 tracking-tight">
+            Taman Farm
           </h1>
 
-          <p className="text-gray-200 mb-8 text-sm md:text-base">
-            Cafe, tanaman hias, dan ruang santai dengan suasana natural yang tenang.
+          <p className="text-white/80 text-lg leading-relaxed mb-8">
+            Tempat santai di tengah alam hijau untuk kopi, makanan,
+            dan tanaman hias di Tasikmalaya.
           </p>
 
-          <a
-            href="https://wa.me/6285187922448"
-            className="bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded-full inline-block"
-          >
-            Hubungi Kami
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
 
-        </div>
-      </motion.section>
+            <a
+              href="#menu"
+              className="px-7 py-4 rounded-full bg-gradient-to-r from-green-600 to-emerald-400 shadow-[0_20px_60px_rgba(34,197,94,0.45)] hover:scale-105 hover:shadow-[0_25px_70px_rgba(34,197,94,0.6)] transition duration-300 font-semibold"
+            >
+              Lihat Menu
+            </a>
+
+            <a
+              href="#tentang"
+              className="px-7 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition duration-300 font-semibold"
+            >
+              Tentang Kami
+            </a>
+
+          </div>
+
+        </motion.div>
+
+      </section>
 
       {/* ABOUT */}
-      <motion.section
+      <section
         id="tentang"
-        className="py-24 px-6"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+        className="py-28 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center"
       >
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+        <div className="relative">
+
+          <div className="absolute -top-5 -left-5 w-full h-full bg-gradient-to-br from-green-200 to-yellow-100 rounded-[40px]"></div>
 
           <img
             src={aboutImage}
-            className="rounded-3xl shadow-xl w-full h-[300px] md:h-[450px] object-cover"
+            className="relative rounded-[40px] shadow-2xl object-cover"
           />
 
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Tentang Kami</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Taman Farm adalah cafe dan ruang hijau yang menghadirkan suasana santai,
-              cocok untuk keluarga, teman, dan healing.
-            </p>
+        </div>
+
+        <div>
+
+          <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+            Tentang Kami
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5 mb-6 leading-tight">
+            Healing Space
+            <br />
+            di Tengah Alam
+          </h2>
+
+          <p className="text-gray-600 leading-relaxed text-lg">
+            Taman Farm adalah tempat unik yang menyatukan toko tanaman hias
+            dan kedai makanan dengan konsep alami, hijau, dan santai.
+            Cocok untuk healing, nongkrong, berburu tanaman,
+            hingga menikmati suasana kebun yang nyaman.
+          </p>
+
+          <div className="mt-8 flex gap-3 flex-wrap">
+
+            <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
+              🌿 Hijau & Asri
+            </span>
+
+            <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
+              ☕ Coffee Spot
+            </span>
+
+            <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
+              🪴 Plant Store
+            </span>
+
           </div>
 
         </div>
-      </motion.section>
 
-      {/* PRODUK */}
-      <section id="produk" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold">Produk Kami</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-          {["Tanaman Hias", "Cafe", "Dekorasi"].map((item, i) => (
-            <div key={i} className="p-8 bg-gray-50 rounded-3xl shadow hover:shadow-xl hover:-translate-y-2 transition">
-              <h3 className="text-xl font-bold mb-2">{item}</h3>
-              <p className="text-gray-600 text-sm">
-                Produk dan layanan terbaik untuk kebutuhan Anda.
-              </p>
-            </div>
-          ))}
-
-        </div>
       </section>
 
       {/* MENU */}
-      <section id="menu" className="py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold">Menu Cafe</h2>
+      <section
+        id="menu"
+        className="py-28 px-6 bg-gradient-to-b from-green-50 to-white"
+      >
+
+        <div className="text-center mb-14">
+
+          <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+            Menu Favorit
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5">
+            Menu Andalan
+          </h2>
+
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
           {[
-            { name: "Kopi Susu", price: "Rp18.000", img: gallery1 },
-            { name: "Mie Pedas", price: "Rp22.000", img: gallery2 },
-            { name: "Matcha Latte", price: "Rp20.000", img: gallery3 }
+            ["Nasi Komplit", "13.000"],
+            ["Mie Instan Komplit", "15.000"],
+            ["Milktea", "6.000"],
+            ["Kopi Panas", "3.000"],
+            ["Ayam Goreng", "5.000"],
+            ["Marksuur", "8.000"],
           ].map((item, i) => (
-            <div key={i} className="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition">
 
-              <img src={item.img} className="h-56 w-full object-cover" />
+            <div
+              key={i}
+              className="bg-white/70 backdrop-blur-2xl p-8 rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(34,197,94,0.15)] hover:-translate-y-3 transition duration-500 border border-white/50"
+            >
 
-              <div className="p-6">
-                <h3 className="font-bold text-lg">{item.name}</h3>
-                <p className="text-green-700 font-semibold">{item.price}</p>
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-2xl mb-5 shadow-lg">
+                🍽️
               </div>
 
+              <h3 className="font-bold text-2xl mb-2">
+                {item[0]}
+              </h3>
+
+              <p className="text-green-600 font-bold text-lg">
+                Rp {item[1]}
+              </p>
+
             </div>
+
           ))}
 
         </div>
+
       </section>
 
       {/* GALERI */}
-      <section id="galeri" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold">Galeri</h2>
+      <section id="galeri" className="py-28 px-6">
+
+        <div className="text-center mb-14">
+
+          <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+            Galeri
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5">
+            Suasana Taman Farm
+          </h2>
+
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
 
           {[gallery1, gallery2, gallery3].map((img, i) => (
-            <img key={i} src={img} className="rounded-3xl h-80 w-full object-cover shadow hover:scale-105 transition" />
+
+            <div
+              key={i}
+              className="overflow-hidden rounded-[36px] shadow-[0_10px_50px_rgba(0,0,0,0.12)] group relative border border-white/30"
+            >
+
+              <img
+                src={img}
+                className="w-full h-[350px] object-cover group-hover:scale-110 transition duration-700"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+
+            </div>
+
           ))}
 
         </div>
+
+      </section>
+
+      {/* LOKASI */}
+      <section
+        id="lokasi"
+        className="py-28 px-6 bg-gradient-to-b from-green-50 to-white"
+      >
+
+        <div className="max-w-5xl mx-auto text-center">
+
+          <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+            Lokasi
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5 mb-5">
+            Kunjungi Kami
+          </h2>
+
+          <p className="text-gray-600 text-lg mb-10">
+            Jl. Rancamaya, Karsamenak, Kawalu,
+            Tasikmalaya, Jawa Barat
+          </p>
+
+          <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+
+            <iframe
+              src="https://maps.google.com/maps?q=tasikmalaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="450"
+            ></iframe>
+
+          </div>
+
+        </div>
+
       </section>
 
       {/* KONTAK */}
-      <section id="kontak" className="py-24 px-6 bg-green-700 text-white text-center">
+      <section
+        id="kontak"
+        className="py-28 px-6 text-center"
+      >
 
-        <h2 className="text-3xl font-bold mb-4">Kontak Kami</h2>
+        <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+          Kontak
+        </span>
 
-        <p>WhatsApp: 0851-8792-2448</p>
-        <p>Instagram: @tamanfarmtasik</p>
+        <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5 mb-6">
+          Hubungi Taman Farm
+        </h2>
+
+        <p className="text-gray-600 text-lg mb-10">
+          Reservasi, informasi tanaman,
+          atau sekadar tanya menu 🌿
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-5">
+
+          <a
+            href="https://wa.me/6285187922448"
+            className="px-8 py-4 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold shadow-2xl hover:scale-105 transition"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="https://instagram.com/tamanfarm.tasik"
+            className="px-8 py-4 rounded-full bg-white border border-green-100 shadow-lg hover:shadow-2xl transition"
+          >
+            Instagram
+          </a>
+
+        </div>
 
       </section>
 
-      {/* FLOAT BUTTON */}
+      {/* FOOTER */}
+      <footer className="bg-gradient-to-br from-[#0f2d1c] via-[#123524] to-[#184d35] text-white py-14 text-center border-t border-white/10">
+
+        <h3 className="text-3xl font-black mb-3">
+          🌿 Taman Farm
+        </h3>
+
+        <p className="text-green-100">
+          Cafe • Tanaman • Healing Space
+        </p>
+
+        <p className="text-sm text-green-200 mt-5">
+          © 2026 Taman Farm Tasikmalaya
+        </p>
+
+      </footer>
+
+      {/* FLOATING BUTTON */}
       <a
         href="https://wa.me/6285187922448"
-        className="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-lg transition"
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-emerald-400 text-white px-6 py-4 rounded-full shadow-[0_15px_40px_rgba(34,197,94,0.5)] hover:scale-110 hover:rotate-2 transition duration-300 z-50 font-semibold"
       >
         WhatsApp
       </a>
