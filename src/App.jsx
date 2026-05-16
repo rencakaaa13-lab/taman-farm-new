@@ -187,6 +187,108 @@ export default function App() {
         </div>
 
       </section>
+      
+      {/* MENU */}
+      <section
+        className="py-24 px-6 bg-[#f7f5f1]"
+      >
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-16">
+
+            <p className="text-green-700 font-semibold mb-3">
+              Menu Cafe
+            </p>
+
+            <h2 className="text-3xl md:text-5xl font-bold">
+              Menu Favorit
+            </h2>
+
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            <div className="bg-white rounded-[30px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+              <img
+                src={gallery1}
+                className="w-full h-60 object-cover"
+              />
+
+              <div className="p-6">
+
+                <h3 className="text-2xl font-bold mb-2">
+                  Kopi Susu
+                </h3>
+
+                <p className="text-gray-600 mb-4">
+                  Kopi susu hangat dengan cita rasa creamy.
+                </p>
+
+                <p className="text-green-700 font-bold">
+                  Rp18.000
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="bg-white rounded-[30px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+              <img
+                src={gallery2}
+                className="w-full h-60 object-cover"
+              />
+
+              <div className="p-6">
+
+                <h3 className="text-2xl font-bold mb-2">
+                  Mie Pedas
+                </h3>
+
+                <p className="text-gray-600 mb-4">
+                  Menu favorit dengan topping lengkap.
+                </p>
+
+                <p className="text-green-700 font-bold">
+                  Rp22.000
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="bg-white rounded-[30px] overflow-hidden shadow-sm hover:shadow-2xl transition duration-500">
+
+              <img
+                src={gallery3}
+                className="w-full h-60 object-cover"
+              />
+
+              <div className="p-6">
+
+                <h3 className="text-2xl font-bold mb-2">
+                  Matcha Latte
+                </h3>
+
+                <p className="text-gray-600 mb-4">
+                  Minuman segar dengan rasa matcha premium.
+                </p>
+
+                <p className="text-green-700 font-bold">
+                  Rp20.000
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
 
       {/* GALERI */}
       <section
