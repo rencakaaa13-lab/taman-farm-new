@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 
+import {
+  FaLeaf,
+  FaCoffee,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
+
 import heroImage from "./assets/hero.jpg";
 import aboutImage from "./assets/about.jpg";
 import gallery1 from "./assets/gallery1.jpg";
@@ -8,16 +15,20 @@ import gallery3 from "./assets/gallery3.jpg";
 
 export default function App() {
   return (
-    <div className="bg-[#f6fdf7] text-gray-800 overflow-x-hidden">
+    <div className="bg-[#f6fdf7] text-gray-800 overflow-x-hidden scroll-smooth">
 
       {/* BACKGROUND BLUR */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-green-300/30 blur-[120px] rounded-full"></div>
+
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-200/30 blur-[120px] rounded-full"></div>
+
       </div>
 
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-green-100/20">
+
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
           <h1 className="text-2xl font-extrabold bg-gradient-to-r from-green-700 to-emerald-500 bg-clip-text text-transparent">
@@ -32,6 +43,10 @@ export default function App() {
 
             <a href="#menu" className="hover:text-green-600 transition">
               Menu
+            </a>
+
+            <a href="#tanaman" className="hover:text-green-600 transition">
+              Tanaman
             </a>
 
             <a href="#galeri" className="hover:text-green-600 transition">
@@ -49,6 +64,7 @@ export default function App() {
           </div>
 
         </div>
+
       </nav>
 
       {/* HERO */}
@@ -61,7 +77,6 @@ export default function App() {
         }}
       >
 
-        {/* overlay blur */}
         <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
 
         <motion.div
@@ -112,7 +127,13 @@ export default function App() {
         className="py-28 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center"
       >
 
-        <div className="relative">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
 
           <div className="absolute -top-5 -left-5 w-full h-full bg-gradient-to-br from-green-200 to-yellow-100 rounded-[40px]"></div>
 
@@ -121,9 +142,14 @@ export default function App() {
             className="relative rounded-[40px] shadow-2xl object-cover"
           />
 
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
 
           <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
             Tentang Kami
@@ -158,7 +184,7 @@ export default function App() {
 
           </div>
 
-        </div>
+        </motion.div>
 
       </section>
 
@@ -191,13 +217,17 @@ export default function App() {
             ["Marksuur", "8.000"],
           ].map((item, i) => (
 
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className="bg-white/70 backdrop-blur-2xl p-8 rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(34,197,94,0.15)] hover:-translate-y-3 transition duration-500 border border-white/50"
             >
 
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-2xl mb-5 shadow-lg">
-                🍽️
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-2xl mb-5 shadow-lg text-white">
+                <FaCoffee />
               </div>
 
               <h3 className="font-bold text-2xl mb-2">
@@ -208,7 +238,71 @@ export default function App() {
                 Rp {item[1]}
               </p>
 
-            </div>
+            </motion.div>
+
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* FEATURED PLANTS */}
+      <section
+        id="tanaman"
+        className="py-28 px-6"
+      >
+
+        <div className="text-center mb-14">
+
+          <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+            Tanaman Unggulan
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5">
+            Koleksi Favorit
+          </h2>
+
+        </div>
+
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+
+          {[
+            [
+              "Monstera",
+              "Tanaman indoor premium dengan daun eksotis.",
+            ],
+            [
+              "Aglaonema",
+              "Warna cantik untuk memperindah ruangan.",
+            ],
+            [
+              "Philodendron",
+              "Tanaman aesthetic favorit pecinta tanaman.",
+            ],
+          ].map((item, i) => (
+
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white/70 backdrop-blur-xl p-8 rounded-[32px] shadow-2xl border border-white hover:-translate-y-3 transition duration-500"
+            >
+
+              <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-white text-2xl shadow-xl mb-6">
+                <FaLeaf />
+              </div>
+
+              <h3 className="text-2xl font-bold mb-3">
+                {item[0]}
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed">
+                {item[1]}
+              </p>
+
+            </motion.div>
 
           ))}
 
@@ -235,8 +329,12 @@ export default function App() {
 
           {[gallery1, gallery2, gallery3].map((img, i) => (
 
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className="overflow-hidden rounded-[36px] shadow-[0_10px_50px_rgba(0,0,0,0.12)] group relative border border-white/30"
             >
 
@@ -247,7 +345,7 @@ export default function App() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-            </div>
+            </motion.div>
 
           ))}
 
@@ -271,9 +369,9 @@ export default function App() {
             Kunjungi Kami
           </h2>
 
-          <p className="text-gray-600 text-lg mb-10">
-            Jl. Rancamaya, Karsamenak, Kawalu,
-            Tasikmalaya, Jawa Barat
+          <p className="text-gray-600 text-lg mb-10 flex items-center justify-center gap-2">
+            <FaMapMarkerAlt className="text-green-600" />
+            Jl. Rancamaya, Karsamenak, Kawalu, Tasikmalaya
           </p>
 
           <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
@@ -347,12 +445,19 @@ export default function App() {
       </footer>
 
       {/* FLOATING BUTTON */}
-      <a
+      <motion.a
         href="https://wa.me/6285187922448"
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-emerald-400 text-white px-6 py-4 rounded-full shadow-[0_15px_40px_rgba(34,197,94,0.5)] hover:scale-110 hover:rotate-2 transition duration-300 z-50 font-semibold"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        animate={{ y: [0, -8, 0] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+        }}
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-green-500 to-emerald-400 text-white w-16 h-16 rounded-full shadow-[0_15px_40px_rgba(34,197,94,0.5)] flex items-center justify-center z-50 text-2xl"
       >
-        WhatsApp
-      </a>
+        <FaWhatsapp />
+      </motion.a>
 
     </div>
   );
