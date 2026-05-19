@@ -43,11 +43,11 @@ export default function App() {
             <div>
 
               <h1 className="text-xl md:text-2xl font-black text-green-800 leading-none">
-                Taman Farm
+                Taman Farm Tasikmalaya
               </h1>
 
               <p className="text-xs text-gray-500">
-                Cafe & Green Space
+                Restaurant & Green Space
               </p>
 
             </div>
@@ -107,20 +107,19 @@ export default function App() {
 
           <div className="inline-block mb-6 px-5 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
 
-            🌿 Cafe • Tanaman • Healing Space
+            🌿 Restaurant • Tanaman • Healing Space
 
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 tracking-tight drop-shadow-[0_5px_20px_rgba(0,0,0,0.5)]">
 
-            Taman Farm
+            Taman Farm Tasikmalaya
 
           </h1>
 
           <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
 
-            Tempat santai di tengah alam hijau untuk kopi, makanan,
-            dan tanaman hias di Tasikmalaya.
+            Tempat santai di tengah alam hijau, makanan, dan tanaman hias di Kota Tasikmalaya
 
           </p>
 
@@ -190,10 +189,12 @@ export default function App() {
 
           <p className="text-gray-600 leading-relaxed text-lg">
 
-            Taman Farm adalah tempat unik yang menyatukan toko tanaman hias
-            dan kedai makanan dengan konsep alami, hijau, dan santai.
-            Cocok untuk healing, nongkrong, berburu tanaman,
-            hingga menikmati suasana kebun yang nyaman.
+            Tempat unik yang menyatukan kecintaan pada tanaman dan kenikmatan bersantap di bawah rindangnya pepohonan.
+            Kami menghadirkan dua konsep dalam satu lokasi:
+            Toko Tanaman Hias yang lengkap, serta Kedai Makanan dengan sajian minuman dan hidangan rumahan yang nyaman di lidah.
+            Berawal dari hobi berkebun dan keinginan menciptakan ruang hijau yang bisa dinikmati siapa saja,
+            Taman Farm kini menjadi tujuan favorit keluarga, anak muda, hingga komunitas tanaman untuk berburu tanaman hias,
+            sekaligus melepas penat sambil menyeruput kopi di tengah kebun.
 
           </p>
 
@@ -204,7 +205,7 @@ export default function App() {
             </span>
 
             <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
-              ☕ Coffee Spot
+              ☕ Restarant Spot
             </span>
 
             <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
@@ -240,10 +241,11 @@ export default function App() {
           {[
             ["Nasi Komplit", "13.000"],
             ["Mie Instan Komplit", "15.000"],
-            ["Milktea", "6.000"],
-            ["Kopi Panas", "3.000"],
-            ["Ayam Goreng", "5.000"],
-            ["Marksuur", "8.000"],
+            ["Nasi Goreng Komplit", "18.000"],
+            ["Nasi Cikur Komplit", "15.000"],
+            ["Nasi TO Komplit", "15.000"],
+            ["Lauk Pauk", "1.000 s/d 7.000"],
+            ["Minuman", "3.000 s/d 8.000"],
           ].map((item, i) => (
 
             <motion.div
@@ -297,16 +299,32 @@ export default function App() {
 
           {[
             [
-              "Monstera",
-              "Tanaman indoor premium dengan daun eksotis.",
+              "Tanaman Hias Daun",
+              "Termasuk Monstera, Aglaonema, Philodendron, dan Calathea.",
             ],
             [
-              "Aglaonema",
-              "Warna cantik untuk memperindah ruangan.",
+              "Tanaman Gantung & Merambat",
+              "Termasuk Sirih Gading, Janggut Musa, dan String of Pearis.",
             ],
             [
-              "Philodendron",
-              "Tanaman aesthetic favorit pecinta tanaman.",
+              "Tanaman Paku-pakuan",
+              "Termasuk Paku Tanduk Rusa dan Paku Sarang Burung.",
+            ],
+            [
+              "Tanaman Outdoor & Lanskap",
+              "Termasuk Pucuk Merah, Ketapang Kencana dan Lidah Mertua.",
+            ],
+            [
+              "Perlengkapan Tanam",
+              "Pot keramik, pot plastik, pot gantung, pot minimalis dari semen, serta rak tanaman kayu dan besi.",
+            ],
+            [
+              "Media Tanam & Pupuk",
+              "Tanah subur, sekam bakar, cocopeat, pupuk organik, pupuk NPK, pupuk slow release, dan vitamin tanaman.",
+            ],
+            [
+              "Aksesoris dan Dekorasi Tanaman",
+              "Batu hias, penyiram tanaman, beraneka ragam pot, dan alat berkebun sederhana.",
             ],
           ].map((item, i) => (
 
@@ -400,7 +418,7 @@ export default function App() {
 
           <p className="text-gray-600 text-lg mb-10 flex items-center justify-center gap-2">
             <FaMapMarkerAlt className="text-green-600" />
-            Jl. Rancamaya, Karsamenak, Kawalu, Tasikmalaya
+            Jl. Rancamaya, Kel. Karsamenak, Kec. Kawalu, Kota Tasikmalaya
           </p>
 
           <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
@@ -428,7 +446,7 @@ export default function App() {
         </span>
 
         <h2 className="text-4xl md:text-5xl font-black text-green-800 mt-5 mb-6">
-          Hubungi Taman Farm
+          Hubungi Taman Farm Tasikmalaya
         </h2>
 
         <p className="text-gray-600 text-lg mb-10">
@@ -460,11 +478,11 @@ export default function App() {
       <footer className="bg-gradient-to-br from-[#0f2d1c] via-[#123524] to-[#184d35] text-white py-14 text-center border-t border-white/10">
 
         <h3 className="text-3xl font-black mb-3">
-          🌿 Taman Farm
+          🌿 Taman Farm Tasikmalaya
         </h3>
 
         <p className="text-green-100">
-          Cafe • Tanaman • Healing Space
+          Restaurant • Tanaman • Healing Space
         </p>
 
         <p className="text-sm text-green-200 mt-5">
