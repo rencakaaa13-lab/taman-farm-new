@@ -47,7 +47,7 @@ export default function App() {
               </h1>
 
               <p className="text-xs text-gray-500">
-                Restaurant & Green Space
+                Kedai & Green Space
               </p>
 
             </div>
@@ -107,7 +107,7 @@ export default function App() {
 
           <div className="inline-block mb-6 px-5 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
 
-            🌿 Restaurant • Tanaman • Healing Space
+            🌿 Kedai • Tanaman • Healing Space
 
           </div>
 
@@ -482,7 +482,7 @@ export default function App() {
         </h3>
 
         <p className="text-green-100">
-          Restaurant • Tanaman • Healing Space
+          Kedai • Tanaman • Healing Space
         </p>
 
         <p className="text-sm text-green-200 mt-5">
