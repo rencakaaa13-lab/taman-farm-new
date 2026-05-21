@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +12,15 @@ body {
   font-family: 'Outfit', sans-serif;
   background: #f5f8f3;
   color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* PERFORMANCE OPTIMIZATION */
+img {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* BUTTON */
@@ -21,5 +30,18 @@ body {
 
 /* CARD */
 .card {
-  @apply bg-white/70 backdrop-blur-xl border border-white/40 rounded-3xl shadow-xl;
+  @apply bg-white/70 backdrop-blur-md border border-white/40 rounded-3xl shadow-xl;
+}
+
+/* REDUCE MOTION FOR ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
