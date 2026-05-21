@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 import {
   FaLeaf,
-  FaKedaie,
+  FaBowlFood,
   FaMapMarkerAlt,
   FaWhatsapp,
-} from "react-icons/fa";
+} from "react-icons/fa6";
 
 import heroImage from "./assets/hero.jpg";
 import aboutImage from "./assets/about.jpg";
@@ -258,7 +258,7 @@ export default function App() {
             >
 
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-2xl mb-5 shadow-lg text-white">
-                <FaKedaie />
+                <FaBowlFood />
               </div>
 
               <h3 className="font-bold text-2xl mb-2">
