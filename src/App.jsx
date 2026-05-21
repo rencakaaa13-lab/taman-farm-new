@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import {
   FaLeaf,
-  FaCoffee,
+  FaKedaie,
   FaMapMarkerAlt,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -187,7 +187,7 @@ export default function App() {
 
           </h2>
 
-          <p className="text-gray-600 leading-relaxed text-lg">
+          <p className="text-gray-600 leading-[2] text-lg font-normal">
 
             Tempat unik yang menyatukan kecintaan pada tanaman dan kenikmatan bersantap di bawah rindangnya pepohonan.
             Kami menghadirkan dua konsep dalam satu lokasi:
@@ -205,7 +205,7 @@ export default function App() {
             </span>
 
             <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
-              ☕ Restarant Spot
+              ☕ Kedai Spot
             </span>
 
             <span className="bg-white px-5 py-3 rounded-2xl shadow-lg border border-green-100">
@@ -258,7 +258,7 @@ export default function App() {
             >
 
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center text-2xl mb-5 shadow-lg text-white">
-                <FaCoffee />
+                <FaKedaie />
               </div>
 
               <h3 className="font-bold text-2xl mb-2">
@@ -424,9 +424,12 @@ export default function App() {
           <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
 
             <iframe
-              src="https://maps.google.com/maps?q=tasikmalaya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps?q=-7.376972,108.223028&z=17&output=embed"
               width="100%"
               height="450"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
 
           </div>
